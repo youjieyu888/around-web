@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Link } from 'react-router-dom';
 
 class NormalLoginForm extends React.Component {
     handleSubmit = e => {
@@ -41,7 +42,7 @@ class NormalLoginForm extends React.Component {
                         Log in
                     </Button>
                     <div>
-                    Or <a href="">register now!</a>
+                    Or <Link to="/register">register now!</Link>
                     </div>
                 </Form.Item>
             </Form>

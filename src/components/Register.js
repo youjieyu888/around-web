@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 class RegistrationForm extends React.Component {
     state = {
@@ -100,9 +101,12 @@ class RegistrationForm extends React.Component {
                     })(<Input.Password onBlur={this.handleConfirmBlur} />)}
                 </Form.Item>
                 <Form.Item {...tailFormItemLayout}>
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" className="login-form-button">
                         Register
                     </Button>
+                    <p>
+                        I have an account, <Link to="/login">login</Link>
+                    </p>
                 </Form.Item>
             </Form>
         );
