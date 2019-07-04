@@ -3,6 +3,8 @@ import {TopBar} from './TopBar'
 import {Main} from './Main'
 
 import '../styles/App.css';
+import '../styles/Main.css';
+import '../styles/Login.css';
 
 function App() {
   return (

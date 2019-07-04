@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
-import '../styles/App.css';
+// import '../styles/App.css';
 
 export class TopBar  extends React.Component{
     render(){
