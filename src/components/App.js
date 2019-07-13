@@ -5,6 +5,7 @@ import {TOKEN_KEY} from '../constants'
 import '../styles/App.css';
 import '../styles/Main.css';
 import '../styles/Login.css';
+import '../styles/Home.css';
 
 class App extends React.Component {
     state = {
