@@ -1,5 +1,9 @@
-.main-tabs{
-    Margin-top: 40px;
-    Margin-left: 100px;
-    Margin-right: 100px;
+.main-tabs {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.video-block {
+    height: 400px;
+    width: 220px;
 }
