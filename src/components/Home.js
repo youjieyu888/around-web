@@ -52,7 +52,7 @@ export class Home extends React.Component {
         const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
         const token = localStorage.getItem(TOKEN_KEY);
         this.setState({ isLoadingPosts: true, error: '' });
-        return fetch(`${API_ROOT}/search?lat=${lat}&lon=${lon}&range=10`, {
+        return fetch(`${API_ROOT}/search?lat=${lat}&lon=${lon}&range=20000`, {
             method: 'GET',
             headers: {
                 Authorization: `${AUTH_HEADER} ${token}`
