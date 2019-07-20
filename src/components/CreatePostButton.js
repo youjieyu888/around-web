@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button, message } from 'antd';
 import { CreatePostForm } from './CreatePostForm';
-import { API_ROOT, AUTH_HEADER, TOKEN_KEY, POS_KEY, LOC_SHAKE } from '../constants';
+import { API_ROOT, AUTH_HEADER, TOKEN_KEY, POS_KEY, LOC_SHAKE, TOPIC_FACE, TOPIC_AROUND } from '../constants';
 
 export class CreatePostButton extends React.Component {
     state = {
@@ -39,7 +39,7 @@ export class CreatePostButton extends React.Component {
                 })
                     .then((response) => {
                         if (response.ok) {
-                            return this.props.loadNearbyPosts();
+                            return this.props.loadPosts()
                         }
                         throw new Error('Failed to create post.');
                     })
