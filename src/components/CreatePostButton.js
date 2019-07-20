@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Button, message } from 'antd';
 import { CreatePostForm } from './CreatePostForm';
-import { API_ROOT, AUTH_HEADER, TOKEN_KEY, POS_KEY } from '../constants';
+import { API_ROOT, AUTH_HEADER, TOKEN_KEY, POS_KEY, LOC_SHAKE } from '../constants';
 
 export class CreatePostButton extends React.Component {
     state = {
@@ -15,6 +15,7 @@ export class CreatePostButton extends React.Component {
         });
     };
 
+    //modified
     handleOk = () => {
         this.form.validateFields((err, values) => {
             console.log(values);
@@ -23,8 +24,8 @@ export class CreatePostButton extends React.Component {
                 const { lat, lon } = JSON.parse(localStorage.getItem(POS_KEY));
 
                 const formData = new FormData();
-                formData.set('lat', lat);
-                formData.set('lon', lon);
+                formData.set('lat', lat + (Math.random()*2-1)*LOC_SHAKE );
+                formData.set('lon', lon + (Math.random()*2-1)*LOC_SHAKE );
                 formData.set('message', values.message);
                 formData.set('image', values.image[0].originFileObj);
 
@@ -63,6 +64,7 @@ export class CreatePostButton extends React.Component {
         });
     };
 
+    //modified
     getFormRef = (formInstance) => {
         this.form = formInstance;
     }
@@ -81,7 +83,7 @@ export class CreatePostButton extends React.Component {
                     okText='Create'
                     confirmLoading={confirmLoading}
                     onCancel={this.handleCancel}
-                >
+                    >
                     <CreatePostForm ref={this.getFormRef}/>
                 </Modal>
             </div>

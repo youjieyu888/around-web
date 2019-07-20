@@ -3,7 +3,9 @@ import {Register} from './Register'
 import {Login} from './Login'
 import {Switch, Route, Redirect} from 'react-router'
 import {Home} from './Home'
+
 export class Main extends React.Component{
+
     getLogin = ()=>{
         return this.props.isLoggedIn?<Redirect to="/home"/>:<Login handleLoginSucceed={this.props.handleLoginSucceed}/>
     }

@@ -6,21 +6,24 @@ import '../styles/App.css';
 import '../styles/Main.css';
 import '../styles/Login.css';
 import '../styles/Home.css';
+import '../styles/AroundMarker.css'
 
 class App extends React.Component {
+
     state = {
         isLoggedIn:Boolean(localStorage.getItem(TOKEN_KEY))
     }
 
-    handleLoginSucceed = (token)=>{
-        localStorage.setItem(TOKEN_KEY, token)
+    handleLoginSucceed = (token) => {
+        localStorage.setItem(TOKEN_KEY, token);
         this.setState({isLoggedIn:true});
     }
 
-    handleLogout = ()=>{
-        localStorage.removeItem(TOKEN_KEY)
+    handleLogout = () => {
+        localStorage.removeItem(TOKEN_KEY);
         this.setState({isLoggedIn:false});
     }
+
     render(){
         return (
             <div className="App">
